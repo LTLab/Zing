@@ -15,13 +15,6 @@ jobs:
     container: registry.cn-hangzhou.aliyuncs.com/mozt/devkita64:1.1
 
     steps:
-      - name: Update latest libnx
-        run: |
-          git config --global --add safe.directory "*"
-          git clone --recurse-submodules https://github.com/switchbrew/libnx.git
-          cd libnx
-          make install -j$(nproc)
-        shell: bash
       - name: Checkout latest code
         uses: actions/checkout@v4.2.2
         with:
